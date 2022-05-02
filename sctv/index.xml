@@ -21,18 +21,26 @@
       <guid> test11 </guid>
     </item>
     <item>
-      <title> fff rss </title>
+      <title> idx </title>
       <description>sctvRealDescription.</description>
       <pubDate>Fri, 24 Feb 2017 12:00:00 GMT</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/sctv2019/sctv2019.github.io/main/fff.rss.xml"
+      <enclosure url="https://sctv2019.github.io/"
                  type="application/xml" length="1684"/>
       <guid> sctvR </guid>
     </item>
     <item>
-      <title> index xml </title>
+      <title> fff rss </title>
       <description>sctvRealDescription.</description>
       <pubDate>Fri, 24 Feb 2017 12:00:00 GMT</pubDate>
-      <enclosure url="https://raw.githubusercontent.com/sctv2019/sctv2019.github.io/main/index.xml"
+      <enclosure url="https://sctv2019.github.io/fff.rss"
+                 type="application/xml" length="1684"/>
+      <guid> sctvR </guid>
+    </item>
+    <item>
+      <title> fff rss xml </title>
+      <description>sctvRealDescription.</description>
+      <pubDate>Fri, 24 Feb 2017 12:00:00 GMT</pubDate>
+      <enclosure url="https://sctv2019.github.io/fff.rss.xml"
                  type="application/xml" length="1684"/>
       <guid> sctvR </guid>
     </item>
