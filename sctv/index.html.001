@@ -1,0 +1,16 @@
+<html>
+    <head>
+    </head>
+    <body>
+        sctv2019.com
+        https://raw.githubusercontent.com/sctv2019/sctv2019.github.io/main/index.html
+        <script language="javascript" type="text/javascript">
+            <!--
+window.setTimeout(function(){window.top.location="https://raw.githubusercontent.com/sctv2019/sctv2019.github.io/main/index.html"} , 300);
+-->
+        </script>
+
+    </body>
+
+</html>
+
