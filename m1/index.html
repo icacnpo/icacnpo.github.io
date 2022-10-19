@@ -1,57 +1,178 @@
-<!DOCTYPE html>
-<html lang='en-us'>
+<html>
     <head>
+
+        <title>m1</title>
+
+        <link rel="stylesheet" type="text/css" href="includes/big_display_style.css">
+        <link rel="stylesheet" type="text/css" href="includes/middle_display_style.css">
+        <link rel="stylesheet" type="text/css" href="includes/small_display_style.css">
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() { startplayer(); }, false);
+            var player;
+            function startplayer() 
+            {
+                            player = document.getElementById('video_player');
+                            //player.controls = true;
+                            //player.loop = true;
+                        }
+            function play_vid()
+            {
+                            player.play();
+                        }
+            function pause_vid()
+            {
+                            player.pause();
+                        }
+            function stop_vid() 
+            {
+                            player.pause();
+                            player.currentTime = 0;
+                        }
+            function change_vol()
+            {
+                            player.volume=document.getElementById("change_vol").value;
+                        }
+        </script>
+        <style>
+body
+    {
+    width:100%;
+    margin:0 auto;
+    padding:0px;
+    font-family:helvetica;
+    #background-color:#BCF5A9;
+}
+h1
+    {
+    #margin-top:50px;
+    #color:#31B404;
+}
+h1 a
+    {
+    color:#31B404;
+    font-size:14px;
+}
+#wrapper
+    {
+    text-align:center;
+    margin:0 auto;
+    padding:0px;
+    width:86%;
+}
+#player_wrapper
+    {
+    position:relative;
+    width:85%;
+    #margin-left:300px;
+}
+#video_player
+    {
+    width:85%;
+}
+#player_controls
+    {
+    top:98%;
+    position:absolute;
+    background-color:gray;
+    width:85%;
+    padding:5px;
+    box-sizing:border-box;
+}
+input[type="image"]
+{
+    float:left;
+    height:60px;
+    margin-left:12px;
+    margin-right:15px;
+    margin-top:12px;
+
+}
+#vol_img
+    {
+    margin-left:150px;
+    width:140px;
+    margin-top:12px;
+}
+#div{ display: inline-block;}
+        </style>
     </head>
     <body>
 
-        <div
-            title = "If some phones display abnormally,  Please play in landscape or full screen"
-            Width="100%"
-            style="border:2px dotted Blue;font-size:100%" >
-            <video
-                controls
-                style="margin-bottom:2px;Max-Width:100%"
 
-                preload="none"
-                poster="20200920_iPFTQz678PA.mp4.jpg"
+        <table>
+            <tr><td rowspan="2">
+                    <br>《情如浪濤剪不斷》 《霍東閣》
+                    <br>（霍元甲系列第三部）的一首舒情插曲。
+                    <br>又名：柳葉船。
+                    <br>演唱：徐小明
+                    <br>
 
-                onloadstart="this.volume=0.5"
-                >
-                <source
-                    type="video/mp4"
-                    src="20200920_iPFTQz678PA.mp4">
-                20200920_iPFTQz678PA.mp4</video>
+                    <H2>
+                        <br>半生漂泊遇到你是緣， 
+                        <br>刻骨銘心相愛亦溫暖。
+                        <br>未怕霜雪飄，
+                        <br>何愁暴風雨，
+                        <br>情如浪浮破木船。
+                        <br>冷風淒雨露打柳葉船，
+                        <br>刀光劍影波折萬千寸。
+                        <br>莫嘆生太短，
+                        <br>柔情未改變。
+                        <br>船乘浪潮輕駛遠。
+                        <br>共尋覓，
+                        <br>歡笑片斷，
+                        <br>茫茫蒼海似靜還亂。
+                        <br>牽你手，傳我曖，
+                        <br>撐舵在風波內轉。
+                        <br>兩心相印樂比世外園，
+                        <br>冰峰雪飄心裡亦溫暖。
+                        <br>共你相眷戀，
+                        <br>閒愁盡飛遠。
+                        <br>情如浪濤剪不斷。
+                    </H2>
+                </td>
+                <td>
+        <div id='player_wrapper'>
+            <video id='video_player' controls autoplay loop="1">
+                <source src='20200920_iPFTQz678PA.mp4' type='video/mp4'>
+            </video>
+            <div id='player_controls'>
+                <input type="image" src="play.png"  onclick="play_vid()" id="play_button">    
+                <input type="image" src="pause.png" onclick="pause_vid()" id="pause_button">  
+                <input type="image" src="stop.png"  onclick="stop_vid()" id="stop_button">    
+                <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
+            </div>
+        </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
 
-            <br> <br>
+                    <h3>
+                        <br>
+                        <br>
+                        <br>
+                        <br>A comfortable episode in the love of the love is like a wave of love. Also known as: Liuye Boat.
+                        <br>Sing: Xu Xiaoming
+                        <br>
+                        <br>It is our destiny When I meet you after a half-life wandering, Our passionate love keep each other warm.
+                        <br>I am not afraid of frost and snow,  nor storm and rain, love is like a breaking wooden boat on the wave.
+                        <br>The cold wind and rain dew hit the willow boat, and the sword light sword shadow waves were tens of inches.
+                        <br>Don't sigh that life is too short,  but our tenderness has not changed. The boat on the wave drove away lightly.
+                        <br>Looking together for our happy moments, and the vast sea seemed to be quiet and chaotic.
+                        <br>Hold your hand, pass you my warmth, and control the rudder in the storm.
+                        <br>The two hearts joininng together are happier than in the world's paradise.
+                        <br>Being so attached to each other, our sorrows have flown away. Love is like a continuous flowing of waves. 
+                    </h3>
+                </td>
+            </tr>
+
+        </table>
 
 
-            <br>《情如浪濤剪不斷》 《霍東閣》（霍元甲系列第三部）的一首舒情插曲。又名：柳葉船。
-            <br>演唱：徐小明
-            <br>
+        <br> <br> <br> <br> <br>
 
-            <H1>
-            <br>半生漂泊遇到你是緣， 刻骨銘心相愛亦溫暖。
-            <br>未怕霜雪飄，何愁暴風雨，情如浪浮破木船。
-            <br>冷風淒雨露打柳葉船，刀光劍影波折萬千寸。
-            <br>莫嘆生太短，柔情未改變。船乘浪潮輕駛遠。
-            <br>共尋覓，歡笑片斷，茫茫蒼海似靜還亂。
-            <br>牽你手，傳我曖，撐舵在風波內轉。
-            <br>兩心相印樂比世外園，冰峰雪飄心裡亦溫暖。
-            <br>共你相眷戀，閒愁盡飛遠。情如浪濤剪不斷。
-            </H1>
 
-            <br>
-            <br>A comfortable episode in the love of the love is like a wave of love. Also known as: Liuye Boat.
-            <br>Sing: Xu Xiaoming
-            <br>
-            <br>It is our destiny When I meet you after a half-life wandering, Our passionate love keep each other warm.
-            <br>I am not afraid of frost and snow,  nor storm and rain, love is like a breaking wooden boat on the wave.
-            <br>The cold wind and rain dew hit the willow boat, and the sword light sword shadow waves were tens of inches.
-            <br>Don't sigh that life is too short,  but our tenderness has not changed. The boat on the wave drove away lightly.
-            <br>Looking together for our happy moments, and the vast sea seemed to be quiet and chaotic.
-            <br>Hold your hand, pass you my warmth, and control the rudder in the storm.
-            <br>The two hearts joininng together are happier than in the world's paradise.
-            <br>Being so attached to each other, our sorrows have flown away. Love is like a continuous flowing of waves. 
 
     </body>
 </html>
