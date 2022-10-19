@@ -65,9 +65,12 @@
                             // please notice : ended event will be disable by "loop=1"
                             if ( loopYes1 == 0 ) {
                                             console.log("ck_onended 0");
-                                        } else {
-                                                        console.log("ck_onended 1");
-                                                    };
+                                            ck_pause();
+                                        } 
+                            if ( loopYes1 != 0 ) {
+                                            console.log("ck_onended 1");
+                                            ck_play();
+                                        };
                         }
         </script>
         <style>
@@ -173,14 +176,14 @@ input[type="image"]
                             <source src='20200920_iPFTQz678PA.mp4' type='video/mp4'>
                         </video>
 
-                        <div id='player_controls'>
-                            <input type="image" src="play.png"  onclick="ck_play()"         id="id_play">    
-                            <input type="image" src="pause.png" onclick="ck_pause()"        id="id_pause" hidden="hidden">   
-                            <input type="image" src="stop.png"  onclick="ck_stop()"         id="id_stop">    
-                            <input type="range"                 onchange="ck_change_vol()"  id="id_change_vol" step="0.05" min="0" max="1" value="0.5">
-                            <input type="image" src="yes.png"   onclick="ck_yes()"          id="id_yes">    
-                            <input type="image" src="no.png"    onclick="ck_no()"           id="id_no" hidden="hidden">    
-                        </div>
+                            <div id='player_controls'>
+                                <input type="image" src="play.png"  onclick="ck_play()"         id="id_play">    
+                                <input type="image" src="pause.png" onclick="ck_pause()"        id="id_pause" hidden="hidden">   
+                                <input type="image" src="stop.png"  onclick="ck_stop()"         id="id_stop">    
+                                <input type="range"                 onchange="ck_change_vol()"  id="id_change_vol" step="0.05" min="0" max="1" value="0.5">
+                                <input type="image" src="yes.png"   onclick="ck_yes()"          id="id_yes">    
+                                <input type="image" src="no.png"    onclick="ck_no()"           id="id_no" hidden="hidden">    
+                            </div>
                     </div>
                 </td>
             </tr>
