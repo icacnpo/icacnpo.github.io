@@ -1,40 +1,76 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 
         <title>m1</title>
 
-        <link rel="stylesheet" type="text/css" href="includes/big_display_style.css">
-        <link rel="stylesheet" type="text/css" href="includes/middle_display_style.css">
-        <link rel="stylesheet" type="text/css" href="includes/small_display_style.css">
 
         <script>
             document.addEventListener("DOMContentLoaded", function() { startplayer(); }, false);
             var player;
+            var Xbtn_play;
+            var Xbtn_pause;
+            var Xbtn_yes;
+            var Xbtn_no;
+            var Hbtn_play;
+            var Hbtn_pause;
+            var Hbtn_yes;
+            var Hbtn_no;
             function startplayer() 
             {
-                            // https://www.freepik.com/
                             player = document.getElementById('video_player');
+                            Xbtn_play  = document.getElementById('id_play');
+                            Xbtn_pause = document.getElementById('id_pause');
+                            Xbtn_yes  = document.getElementById('id_yes');
+                            Xbtn_no = document.getElementById('id_no');
+                            //Hbtn_play  =  element.getAttribute("hidden");
+                            //Hbtn_pause =  element.getAttribute("hidden");
+                            //Hbtn_yes  =  element.getAttribute("hidden");
+                            //Hbtn_no =  element.getAttribute("hidden");
+                            //Xbtn_pause.hidden='id_pause';
+                            //Xbtn_pause.setAttribute("type", "hidden");
+                            // https://www.freepik.com/
                             // https://www.freepik.com/
                             //player.controls = true;
                             //player.loop = true;
-                            player.loop = false;
+                            //player.loop = false;
                         }
-            function play_vid()
+            function ck_play()
             {
                             player.play();
+                            //Xbtn_no.removeAttribute("hidden");
+                            //Xbtn_yes.setAttribute("hidden", "hidden");
+                            Xbtn_pause.removeAttribute("hidden");
+                            Xbtn_play.setAttribute("hidden", "hidden");
                         }
-            function pause_vid()
+            function ck_pause()
             {
                             player.pause();
+                            Xbtn_play.removeAttribute("hidden");
+                            Xbtn_pause.setAttribute("hidden", "hidden");
                         }
-            function stop_vid() 
+            function ck_stop() 
             {
                             player.pause();
                             player.currentTime = 0;
                         }
-            function change_vol()
+            function ck_change_vol()
             {
-                            player.volume=document.getElementById("change_vol").value;
+                            player.volume=document.getElementById("id_change_vol").value;
+                        }
+            function ck_yes()
+            {
+                            console.log("loop_yes")
+                            player.loop = 0;
+                            Xbtn_no.removeAttribute("hidden");
+                            Xbtn_yes.setAttribute("hidden", "hidden");
+                        }
+            function ck_no()
+            {
+                            console.log("loop_no")
+                            player.loop = 1;
+                            Xbtn_yes.removeAttribute("hidden");
+                            Xbtn_no.setAttribute("hidden", "hidden");
                         }
         </script>
         <style>
@@ -140,10 +176,12 @@ input[type="image"]
                 <source src='20200920_iPFTQz678PA.mp4' type='video/mp4'>
             </video>
             <div id='player_controls'>
-                <input type="image" src="play.png"  onclick="play_vid()" id="play_button">    
-                <input type="image" src="pause.png" onclick="pause_vid()" id="pause_button">  
-                <input type="image" src="stop.png"  onclick="stop_vid()" id="stop_button">    
-                <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="0.5">
+                <input type="image" src="play.png"  onclick="ck_play()"         id="id_play">    
+                <input type="image" src="pause.png" onclick="ck_pause()"        id="id_pause" hidden="hidden">   
+                <input type="image" src="stop.png"  onclick="ck_stop()"         id="id_stop">    
+                <input type="range"                 onchange="ck_change_vol()"  id="id_change_vol" step="0.05" min="0" max="1" value="0.5">
+                <input type="image" src="yes.png"   onclick="ck_yes()"          id="id_yes">    
+                <input type="image" src="no.png"    onclick="ck_no()"           id="id_no" hidden="hidden">    
             </div>
         </div>
                 </td>
