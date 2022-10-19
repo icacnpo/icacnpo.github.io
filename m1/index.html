@@ -12,28 +12,15 @@
             var Xbtn_pause;
             var Xbtn_yes;
             var Xbtn_no;
-            var Hbtn_play;
-            var Hbtn_pause;
-            var Hbtn_yes;
-            var Hbtn_no;
+            var loopYes1=1;
             function startplayer() 
             {
-                            player = document.getElementById('video_player');
+                            player = document.getElementById('id_video_player');
                             Xbtn_play  = document.getElementById('id_play');
                             Xbtn_pause = document.getElementById('id_pause');
                             Xbtn_yes  = document.getElementById('id_yes');
                             Xbtn_no = document.getElementById('id_no');
-                            //Hbtn_play  =  element.getAttribute("hidden");
-                            //Hbtn_pause =  element.getAttribute("hidden");
-                            //Hbtn_yes  =  element.getAttribute("hidden");
-                            //Hbtn_no =  element.getAttribute("hidden");
-                            //Xbtn_pause.hidden='id_pause';
-                            //Xbtn_pause.setAttribute("type", "hidden");
-                            // https://www.freepik.com/
-                            // https://www.freepik.com/
-                            //player.controls = true;
-                            //player.loop = true;
-                            //player.loop = false;
+                            player.addEventListener('ended',ck_onended,false);
                         }
             function ck_play()
             {
@@ -61,16 +48,26 @@
             function ck_yes()
             {
                             console.log("loop_yes")
-                            player.loop = 0;
+                            loopYes1=0;
                             Xbtn_no.removeAttribute("hidden");
                             Xbtn_yes.setAttribute("hidden", "hidden");
                         }
             function ck_no()
             {
                             console.log("loop_no")
-                            player.loop = 1;
+                            loopYes1=1;
                             Xbtn_yes.removeAttribute("hidden");
                             Xbtn_no.setAttribute("hidden", "hidden");
+                        }
+            function ck_onended()
+            {
+                            console.log("ck_onended 000 ");
+                            // please notice : ended event will be disable by "loop=1"
+                            if ( loopYes1 == 0 ) {
+                                            console.log("ck_onended 0");
+                                        } else {
+                                                        console.log("ck_onended 1");
+                                                    };
                         }
         </script>
         <style>
@@ -105,7 +102,7 @@ h1 a
     width:85%;
     #margin-left:300px;
 }
-#video_player
+#id_video_player
     {
     width:85%;
 }
@@ -171,19 +168,20 @@ input[type="image"]
                     </H2>
                 </td>
                 <td>
-        <div id='player_wrapper'>
-            <video id='video_player' controls autoplay loop="1">
-                <source src='20200920_iPFTQz678PA.mp4' type='video/mp4'>
-            </video>
-            <div id='player_controls'>
-                <input type="image" src="play.png"  onclick="ck_play()"         id="id_play">    
-                <input type="image" src="pause.png" onclick="ck_pause()"        id="id_pause" hidden="hidden">   
-                <input type="image" src="stop.png"  onclick="ck_stop()"         id="id_stop">    
-                <input type="range"                 onchange="ck_change_vol()"  id="id_change_vol" step="0.05" min="0" max="1" value="0.5">
-                <input type="image" src="yes.png"   onclick="ck_yes()"          id="id_yes">    
-                <input type="image" src="no.png"    onclick="ck_no()"           id="id_no" hidden="hidden">    
-            </div>
-        </div>
+                    <div id='player_wrapper'>
+                        <video id='id_video_player' controls autoplay ended="ck_onended" >
+                            <source src='20200920_iPFTQz678PA.mp4' type='video/mp4'>
+                        </video>
+
+                        <div id='player_controls'>
+                            <input type="image" src="play.png"  onclick="ck_play()"         id="id_play">    
+                            <input type="image" src="pause.png" onclick="ck_pause()"        id="id_pause" hidden="hidden">   
+                            <input type="image" src="stop.png"  onclick="ck_stop()"         id="id_stop">    
+                            <input type="range"                 onchange="ck_change_vol()"  id="id_change_vol" step="0.05" min="0" max="1" value="0.5">
+                            <input type="image" src="yes.png"   onclick="ck_yes()"          id="id_yes">    
+                            <input type="image" src="no.png"    onclick="ck_no()"           id="id_no" hidden="hidden">    
+                        </div>
+                    </div>
                 </td>
             </tr>
             <tr>
