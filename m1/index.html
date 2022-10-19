@@ -12,9 +12,12 @@
             var player;
             function startplayer() 
             {
+                            // https://www.freepik.com/
                             player = document.getElementById('video_player');
+                            // https://www.freepik.com/
                             //player.controls = true;
                             //player.loop = true;
+                            player.loop = false;
                         }
             function play_vid()
             {
@@ -140,7 +143,7 @@ input[type="image"]
                 <input type="image" src="play.png"  onclick="play_vid()" id="play_button">    
                 <input type="image" src="pause.png" onclick="pause_vid()" id="pause_button">  
                 <input type="image" src="stop.png"  onclick="stop_vid()" id="stop_button">    
-                <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="1">
+                <input type="range" id="change_vol" onchange="change_vol()" step="0.05" min="0" max="1" value="0.5">
             </div>
         </div>
                 </td>
